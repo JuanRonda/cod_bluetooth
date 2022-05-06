@@ -1,0 +1,11 @@
+from bluezero import microbit
+ubit = microbit.Microbit(adapter_addr='EC:2E:98:89:73:60',
+                         device_addr='E1:A2:F3:06:DE:A4')
+my_text = 'Hello, world'
+ubit.connect()
+
+while my_text != '':
+    ubit.text = my_text
+    my_text = input('Enter message: ')
+    
+ubit.disconnect()
